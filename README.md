@@ -1,34 +1,31 @@
-# Causal Decomposition Analysis with Time-Varying Mediators: Designing Individualized Interventions to Reduce Social Disparities
+# Sensitivity Analysis for Pretreatment Confounding With Multiple Mediators
 
-Soojin Park<sup>1</sup>, Namhwa Lee<sup>2</sup>, and Rafael Quintana<sup>3</sup>
+Soojin Park<sup>1</sup> and Kevin M. Esterling<sup>2</sup>
 
 <sup>1</sup> School of Education, University of California, Riverside  
-<sup>2</sup> Department of Statistics, University of California, Riverside
-<sup>3</sup> School of Education and Human Sciences, The University of Kansas
+<sup>2</sup> School of Public Policy, University of California, Riverside
+
 
 
 ## Overview
 
-Causal decomposition analysis aims to identify risk factors (referred to as ‘mediators’) that contribute to social disparities in an outcome. Despite promising developments in causal decomposition analysis, current methods are limited to addressing a time-fixed mediator and outcome only, which has restricted our understanding of the causal mechanisms underlying social disparities. In particular, existing approaches largely overlook individual characteristics when designing (hypothetical) interventions to reduce disparities. To address this issue, we extend current longitudinal mediation approaches to the context of disparities research. Specifically, we develop a novel decomposition analysis method that addresses individual characteristics by (1) using optimal dynamic treatment regimes (DTRs) and (2) conditioning on a selective set of individual characteristics. Incorporating optimal DTRs into the design of interventions can be used to strike a balance between equity (reducing disparities) and excellence (improving individuals' outcomes). We illustrate the proposed method using the High School Longitudinal Study data.
+The causal mediation literature has developed techniques to assess the sensitivity of an inference to pretreatment confounding, but these techniques are limited to the case of a single mediator. In this article, we extend sensitivity analysis to possible violations of pretreatment confounding in the case of multiple mediators. In particular, we develop sensitivity analyses under three alternative approaches to effect decomposition: 1) jointly considered mediators, 2) identifiable direct and indirect paths, and 3) interventional analogues effects. With reasonable assumptions, each approach reduces to a single procedure to assess sensitivity in the presence of simultaneous pre- and post-treatment confounding. We demonstrate our sensitivity analysis techniques with a framing experiment that examines whether anxiety mediates respondents' attitudes toward immigration in response to an information prompt.
 
-For more details of our proposed methods, see [our paper](XX). 
+For more details of our proposed methods, see [our paper](https://journals.sagepub.com/doi/abs/10.3102/1076998620934500). 
 Here, we provide `R` codes to reproduce our simulation study and replicate our data analysis. 
 
 ## Case Study
 
 * Data
   
-The HSLS:09 data used for the case study can be downloaded from the NCES by clicking [here](https://nces.ed.gov/surveys/hsls09/hsls09_data.asp). 
+The 'framing' data used for the case study can be downloaded from the 'mediation' R package or by clicking [here](https://github.com/kosukeimai/mediation/tree/master/data). 
 
-* `individualized_HSLS.R` 
+* `Analysis.R` 
  
-   This `R` file replicates Tables 1 and 2 of our study.
+   This `R` file replicates Table 1 and Figure 1 of our study.
 
-## Simulation Study
-
-* `Pop_simulation.R`  
-
-   This `R` file contains the simulation codes for evaluating the performance of the proposed estimators for each individualized effect. This code replicates our results in Appendix D of our paper.
-
+* `multicma.R` 
+ 
+   This `R` file provides source functions for 'Analysis.R'.
 
 These supplementary materials are provided solely for the purpose of reproducibility and must be used in compliance with academic ethical guidelines. If you reference these materials in your own work, please ensure proper citation of the original sources.
